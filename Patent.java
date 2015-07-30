@@ -21,24 +21,14 @@ import org.apache.hadoop.util.ToolRunner;
 
 public class Patent extends Configured implements Tool {
     
-    public static class MapClass extends MapReduceBase
-        implements Mapper<Text, Text, Text, Text> {
-        
-        public void map(Text key, Text value,
-                        OutputCollector<Text, Text> output,
-                        Reporter reporter) throws IOException {
-                        
+    public static class MapClass extends MapReduceBase implements Mapper<Text, Text, Text, Text> {
+        public void map(Text key, Text value, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
             output.collect(value, key);
         }
     }
     
-    public static class Reduce extends MapReduceBase
-        implements Reducer<Text, Text, Text, Text> {
-        
-        public void reduce(Text key, Iterator<Text> values,
-                           OutputCollector<Text, Text> output,
-                           Reporter reporter) throws IOException {
-                           
+    public static class Reduce extends MapReduceBase implements Reducer<Text, Text, Text, Text> {
+        public void reduce(Text key, Iterator<Text> values, OutputCollector<Text, Text> output, Reporter reporter) throws IOException {
             String csv = "";
             while (values.hasNext()) {
                 if (csv.length() > 0) csv += ",";
