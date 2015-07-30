@@ -16,7 +16,7 @@ Some predefined data types are:
 |NullWritable| Placeholder when the key or value is not needed|
 
 
-Example of a personalized data type:  
+An example of a personalized data type:  
 ```Java
 public class Edge implements WritableComparable<Edge>{
   private String departureNode;
