@@ -1,4 +1,5 @@
 // Listing-5-3 in the book
+// reduce-side join
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
