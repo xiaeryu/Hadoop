@@ -28,3 +28,18 @@ public static class Reduce extends Reducer<K2, V2, K3, V3> {
   public void reduce(K2 key, Iterable<V2> values, Context context) throws IOException, InterruptedException { }
 }
 ```
+
+ChainMapper.addMapper()
+---
+```Java
+public static <K1,V1,K2,V2> void addMapper(
+  JobConf job,
+  Class<? extends Mapper<K1,V1,K2,V2>> class,
+  Class<? extends K1> inputKeyClass,
+  Class<? extends V1> inputValueClass,
+  Class<? extends K2> outputKeyClass,
+  Class<? extends V2> outputValueClass,
+  boolean byValue,
+  JobConf mapperConf)
+```
+
