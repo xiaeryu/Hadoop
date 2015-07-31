@@ -33,13 +33,14 @@ ChainMapper.addMapper()
 ---
 ```Java
 public static <K1,V1,K2,V2> void addMapper(
-  JobConf job,
+  JobConf job, // Global JobConf
   Class<? extends Mapper<K1,V1,K2,V2>> class,
   Class<? extends K1> inputKeyClass,
   Class<? extends V1> inputValueClass,
   Class<? extends K2> outputKeyClass,
   Class<? extends V2> outputValueClass,
   boolean byValue,
-  JobConf mapperConf)
+  JobConf mapperConf, // Local JobConf
+)
 ```
 
