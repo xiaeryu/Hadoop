@@ -18,6 +18,12 @@ pig -x(-exectype) local
 pig -x(-exectype) mapreduce
 ```
 
+Pig vs. SQL
+---
+* Pig Latin is a data processing language. 
+You’re specifying a series of data processing steps instead of a complex SQL query with clauses.
+* Pig takes a much looser approach to schema.
+
 Utility commands
 ---
 * help
@@ -79,3 +85,9 @@ Store data from a relation into a directory. The directory must not exist when t
 command is executed. Pig will create the directory and store the relation in files named
 part-nnnnn in it. Uses the PigStorage store function as default unless specified
 otherwise with the USING option.
+
+#### DESCRIBE
+```Pig
+DESCRIBE alias
+```
+Expose Pig’s schema for any relation.
