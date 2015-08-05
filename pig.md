@@ -86,8 +86,22 @@ command is executed. Pig will create the directory and store the relation in fil
 part-nnnnn in it. Uses the PigStorage store function as default unless specified
 otherwise with the USING option.
 
+Diagnostic operators
+---
 #### DESCRIBE
 ```Pig
-DESCRIBE alias
+DESCRIBE alias;
 ```
 Expose Pig’s schema for any relation.
+
+#### ILLUSTRATE
+```Pig
+ILLUSTRATE alias;
+```
+Pig tries to simulate the execution of the statements to compute a relation, but it uses only a small sample of data to make the execution fast. In order for ILLUSTRATE to work, the load command in the first step must include a schema. The subsequent transformations must not include the LIMIT or SPLIT operators, or the nested FOREACH operator, or the use of the map data type.
+
+#### EXPLAIN
+```Pig
+EXPLAIN [-out path] [-brief] [-dot] [-param ...] [-param_file ...] alias;
+```
+Display the execution plan used to compute a relation. When used with a script name, for example, EXPLAIN myscript.pig, it will show the execution plan of the script.
