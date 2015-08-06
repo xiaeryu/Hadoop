@@ -39,6 +39,24 @@ DESCRIBE alias;
 ```
 Check schema.
 
+#### SELECT
+```SQL
+SELECT [ALL | DISTINCT] select_expr, select_expr, ...
+FROM table_reference
+[WHERE where_condition]
+[GROUP BY col_list]
+[HAVING having_condition]
+[CLUSTER BY col_list | [DISTRIBUTE BY col_list] [SORT BY col_list]]
+[LIMIT number]
+```
+
+#### INSERT
+```SQL
+INSERT OVERWRITE TABLE tablename1 select_statement1 FROM from_statement;
+INSERT INTO TABLE tablename1 select_statement1 FROM from_statement;
+```
+INSERT OVERWRITE will overwrite any existing data in the table.  
+INSERT INTO will append to the table, keeping the existing data intact.
 
 Data Type
 ---
